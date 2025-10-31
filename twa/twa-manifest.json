@@ -1,0 +1,27 @@
+{
+  "packageId": "com.lolerasdesigns.budget",
+  "host": "loleras94.github.io",
+  "name": "LolerasDesigns Budget",
+  "launcherName": "Budget App",
+  "display": "standalone",
+  "themeColor": "#1f2937",
+  "backgroundColor": "#1f2937",
+  "startUrl": "/LolerasDesigns-Budget-App/",
+  "iconUrl": "https://loleras94.github.io/LolerasDesigns-Budget-App/icon-512.svg",
+  "navigationColor": "#1f2937",
+  "navigationColorDark": "#1f2937",
+  "navigationDividerColor": "#1f2937",
+  "navigationDividerColorDark": "#1f2937",
+  "splashScreenFadeOutDuration": 300,
+  "enableNotifications": false,
+  "generatorApp": "bubblewrap-cli",
+  "isChromeOSOnly": false,
+  "orientation": "portrait",
+  "fullScopeUrl": "https://loleras94.github.io/LolerasDesigns-Budget-App/",
+  "signingKey": {
+    "path": "signing-key.jks",
+    "alias": "lolerasdesigns"
+  },
+  "appVersion": "1",
+  "appVersionCode": 1
+}
