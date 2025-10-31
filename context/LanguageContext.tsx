@@ -34,8 +34,8 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     const fetchTranslations = async () => {
         try {
             const [enResponse, elResponse] = await Promise.all([
-                fetch('/locales/en.json'),
-                fetch('/locales/el.json')
+                fetch(`${import.meta.env.BASE_URL}locales/en.json`),
+                fetch(`${import.meta.env.BASE_URL}locales/el.json`)
             ]);
             
             if (!enResponse.ok || !elResponse.ok) {

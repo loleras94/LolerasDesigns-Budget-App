@@ -146,7 +146,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
 
       console.log('Fetching daily exchange rate...');
       try {
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const ai = new GoogleGenAI({
+          apiKey: import.meta.env.VITE_EXCHANGE_API_KEY,
+        });
         const prompt = "What is the latest closing exchange rate from USD to EUR? Respond with only the numerical value, for example: 0.93";
         
         const response = await ai.models.generateContent({

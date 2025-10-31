@@ -215,7 +215,7 @@ const History: React.FC = () => {
             };
 
             if (allTickers.length > 0) {
-                 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+                 const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_EXCHANGE_API_KEY });
                  const prompt = `Use Google Search to find the historical closing prices for these tickers on two specific dates: ${startDateString} and ${endDateString}. Tickers: ${allTickers.join(', ')}.
 Respond with ONLY a valid JSON array of objects. Each object must have "ticker" (string, uppercase), "date" (string, YYYY-MM-DD), and "price" (number).
 - For stocks/ETFs, find the price in their primary trading currency.

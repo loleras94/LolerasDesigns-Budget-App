@@ -296,7 +296,7 @@ const Investments: React.FC = () => {
         setIsinFetchError('');
     
         try {
-            const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+            const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_EXCHANGE_API_KEY });
             const prompt = `Given the ISIN "${newHoldingIsin.trim()}", find its official name and a common stock ticker. Respond with ONLY a valid JSON object containing "name" and "ticker" keys. If you cannot find the information, respond with an empty JSON object {}. Example: {"name": "Apple Inc.", "ticker": "AAPL"}`;
             
             const response = await ai.models.generateContent({
@@ -381,7 +381,7 @@ const Investments: React.FC = () => {
                 return;
             };
     
-            const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+            const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_EXCHANGE_API_KEY });
             
             const prompt = `Use Google Search to find data for the following financial instruments.
 - For each instrument in the input array, you MUST return an object in the output array containing the original "id".
