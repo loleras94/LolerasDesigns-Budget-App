@@ -1,3 +1,4 @@
+// Trigger redeploy
 
 import React, { useState } from 'react';
 import Dashboard from './components/Dashboard';
@@ -53,13 +54,14 @@ const App: React.FC = () => {
         {renderContent()}
       </main>
 
-      <nav className="fixed bottom-0 left-0 right-0 bg-gray-800 border-t border-gray-700 flex justify-around shadow-lg">
+      <nav className="fixed-bottom-nav bg-gray-800 border-t border-gray-700 flex justify-around shadow-lg">
         <NavItem tab="dashboard" icon={<ChartPieIcon />} label={t('nav.dashboard')} />
         <NavItem tab="add" icon={<PlusCircleIcon />} label={t('nav.quickAdd')} />
         <NavItem tab="accounts" icon={<BanknotesIcon />} label={t('nav.accounts')} />
         <NavItem tab="investments" icon={<BriefcaseIcon />} label={t('nav.investments')} />
         <NavItem tab="history" icon={<HistoryIcon />} label={t('nav.history')} />
       </nav>
+
     </div>
   );
 };
