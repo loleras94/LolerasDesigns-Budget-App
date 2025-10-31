@@ -1,0 +1,41 @@
+name: Build TWA Android App
+
+on:
+  workflow_dispatch: # run manually
+  push:
+    branches: [main]
+
+jobs:
+  build-twa:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java & Node
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install Node & Bubblewrap
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install -g @bubblewrap/cli
+
+      - name: Build TWA
+        run: |
+          mkdir output
+          cd twa
+          bubblewrap build --manifest=https://loleras94.github.io/LolerasDesigns-Budget-App/manifest.json --skipPwaValidation --signingKey=signing-key.jks --keyAlias=lolerasdesigns --keyPassword=${{ secrets.KEY_PASSWORD }} --storePassword=${{ secrets.STORE_PASSWORD }} || true
+          cp *.apk ../output/ || true
+          cp *.aab ../output/ || true
+
+      - name: Upload built app
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-build
+          path: output/
