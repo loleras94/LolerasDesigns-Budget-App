@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.lolerasdesigns.budget",
+    "sha256_cert_fingerprints": [
+      "74:76:06:81:6E:42:71:FF:F7:E7:23:F0:0D:47:25:CB:3F:69:AD:5B:95:E6:58:CC:72:AA:76:D1:9B:7B:A8:A0"
+    ]
+  }
+}]
